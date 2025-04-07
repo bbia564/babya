@@ -11,8 +11,8 @@ class ErrorCheckView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.barton.value
-              ? const CircularProgressIndicator(color: Colors.green)
+          () => controller.koepp.value
+              ? const CircularProgressIndicator(color: Colors.orange)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class ErrorCheckView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.stwupfjm();
+              controller.vhyo();
             },
             icon: const Icon(
               Icons.restart_alt,

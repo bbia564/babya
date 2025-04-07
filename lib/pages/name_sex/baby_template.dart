@@ -24,7 +24,7 @@ class BabyTemplate extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.gekmisru.value)),
+              url: WebUri.uri(Uri.parse(controller.biwao.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;

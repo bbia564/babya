@@ -5,10 +5,13 @@ import 'package:baby_info/pages/baby_second/baby_second_binding.dart';
 import 'package:baby_info/pages/baby_second/baby_second_view.dart';
 import 'package:baby_info/pages/baby_tab/baby_tab_binding.dart';
 import 'package:baby_info/pages/baby_tab/baby_tab_view.dart';
+import 'package:baby_info/pages/error_check/error_check_binding.dart';
+import 'package:baby_info/pages/error_check/error_check_view.dart';
 import 'package:baby_info/pages/error_page/error_page_binding.dart';
 import 'package:baby_info/pages/error_page/error_page_view.dart';
 import 'package:baby_info/pages/height_weight/height_weight_binding.dart';
 import 'package:baby_info/pages/height_weight/height_weight_view.dart';
+import 'package:baby_info/pages/name_sex/baby_template.dart';
 import 'package:baby_info/pages/name_sex/name_sex_binding.dart';
 import 'package:baby_info/pages/name_sex/name_sex_view.dart';
 import 'package:flutter/material.dart';
@@ -254,7 +257,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Babys,
-      initialRoute: hadData ? '/babyTab' : '/nameSex',
+      initialRoute: '/',
+      //hadData ? '/babyTab' : '/nameSex'
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -307,9 +311,11 @@ class MyApp extends StatelessWidget {
 }
 
 List<GetPage<dynamic>> Babys = [
+  GetPage(name: '/', page: () => const ErrorCheckView(), binding: ErrorCheckBinding()),
   GetPage(name: '/nameSex', page: () => const NameSexPage(), binding: NameSexBinding()),
   GetPage(name: '/heightWeight', page: () => const HeightWeightPage(), binding: HeightWeightBinding()),
   GetPage(name: '/babyTab', page: () => const BabyTabPage(), binding: BabyTabBinding()),
+  GetPage(name: '/babyTemplate', page: () => const BabyTemplate()),
   GetPage(name: '/babySecond', page: () => const BabySecondPage(), binding: BabySecondBinding()),
   GetPage(name: '/babyFirst', page: () => const BabyFirstPage(), binding: BabyFirstBinding()),
   GetPage(name: '/errorPage', page: () => const ErrorPageView(), binding: ErrorPageBinding()),
